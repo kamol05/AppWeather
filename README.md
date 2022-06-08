@@ -19,5 +19,4 @@ Cистема автоматической сборки: Gradle
 3)	REST-метод для удаления учетной записи 
 
 2.	Методы по АПИ
-•	Создать методы из open weather api ссылка  :
-https://openweathermap.org/api/one-call-3
+•	Создать методы из open weather api ссылка  : https://api.openweathermap.org/data/2.5
