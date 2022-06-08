@@ -24,7 +24,7 @@ public class OpenWeatherService {
 
     private final String url = "https://api.openweathermap.org/data/2.5/weather?";
 
-    private final String apiKey = "03c70292da57b7cf4522787836553679";
+    private final String apiKey = "api";
 
     public ResponseEntity<?> getWeatherForUser() {
         Country country = findCountryForUser();
@@ -66,8 +66,8 @@ public class OpenWeatherService {
     }
 
 
-    //    private String url4 = "https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=03c70292da57b7cf4522787836553679";
-    //    private String url4 = "https://api.openweathermap.org/data/2.5/weather?lat=41.311081&lon=69.240562&appid=03c70292da57b7cf4522787836553679";
+    //    private String url4 = "https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid={}";
+    //    private String url4 = "https://api.openweathermap.org/data/2.5/weather?lat=41.311081&lon=69.240562&appid={api}";
 
 
 
