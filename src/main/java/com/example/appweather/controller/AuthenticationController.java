@@ -1,6 +1,5 @@
 package com.example.appweather.controller;
 
-
 import com.example.appweather.model.User;
 import com.example.appweather.repository.UserRepository;
 import com.example.appweather.security.JwtTokenProvider;
@@ -24,11 +23,9 @@ import java.util.Map;
 @RestController
 @RequestMapping
 public class AuthenticationController {
-
     private final AuthenticationManager authenticationManager;
     private UserRepository userRepository;
     private JwtTokenProvider jwtTokenProvider;
-
     public AuthenticationController(AuthenticationManager authenticationManager, UserRepository userRepository, JwtTokenProvider jwtTokenProvider) {
         this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;

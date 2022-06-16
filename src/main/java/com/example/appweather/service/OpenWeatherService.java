@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class OpenWeatherService {
+public class OpenWeatherService implements BaseService{
 
     private UserRepository userRepository;
 
@@ -64,10 +64,6 @@ public class OpenWeatherService {
         clientHttpRequestFactory.setConnectTimeout(timeout);
         return clientHttpRequestFactory;
     }
-
-
-    //    private String url4 = "https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=03c70292da57b7cf4522787836553679";
-    //    private String url4 = "https://api.openweathermap.org/data/2.5/weather?lat=41.311081&lon=69.240562&appid=03c70292da57b7cf4522787836553679";
 
 
 

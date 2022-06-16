@@ -1,5 +1,8 @@
 package com.example.appweather.service;
 
+import com.example.appweather.microservice.model.Agent;
+import com.example.appweather.microservice.repository.AgentRepository;
+import com.example.appweather.microservice.service.AgentService;
 import com.example.appweather.model.Country;
 import com.example.appweather.model.Role;
 import com.example.appweather.model.User;
@@ -16,10 +19,12 @@ public class InitialSetup implements ApplicationListener<ContextRefreshedEvent> 
     private final PasswordEncoder bcryptEncoder;
     private final UserRepository userRepository;
     private final CountryRepository countryRepository;
-    public InitialSetup(PasswordEncoder bcryptEncoder, UserRepository userRepository, CountryRepository countryRepository) {
+    private final AgentService agentRepository;
+    public InitialSetup(PasswordEncoder bcryptEncoder, UserRepository userRepository, CountryRepository countryRepository, AgentService agentRepository) {
         this.bcryptEncoder = bcryptEncoder;
         this.userRepository = userRepository;
         this.countryRepository = countryRepository;
+        this.agentRepository = agentRepository;
     }
 
     @Override
@@ -53,6 +58,14 @@ public class InitialSetup implements ApplicationListener<ContextRefreshedEvent> 
         user2.setRole(Role.USER);
         user2.setCountry(uzb);
 
+        Agent agent = new Agent();
+        agent.setRole(Role.AGENT);
+        agent.setNickName("agent");
+        agent.setFirstName("agent");
+        agent.setSecondName("agent");
+        agent.setPassword("agent");
+
+        agentRepository.add(agent);
         countryRepository.save(uzb);
         userRepository.save(admin);
         userRepository.save(user);
