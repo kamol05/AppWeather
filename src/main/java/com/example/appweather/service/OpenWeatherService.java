@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class OpenWeatherService implements BaseService{
+public class OpenWeatherService {
 
     private UserRepository userRepository;
 
@@ -24,7 +24,7 @@ public class OpenWeatherService implements BaseService{
 
     private final String url = "https://api.openweathermap.org/data/2.5/weather?";
 
-    private final String apiKey = "03c70292da57b7cf4522787836553679";
+    private final String apiKey = "api";
 
     public ResponseEntity<?> getWeatherForUser() {
         Country country = findCountryForUser();
@@ -64,6 +64,8 @@ public class OpenWeatherService implements BaseService{
         clientHttpRequestFactory.setConnectTimeout(timeout);
         return clientHttpRequestFactory;
     }
+
+
 
 
 
