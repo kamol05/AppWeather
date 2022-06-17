@@ -7,9 +7,12 @@ import org.passay.CharacterData;
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 @Slf4j
@@ -59,7 +62,6 @@ public class PasswordUtil {
             public String getErrorCode() {
                 return ERROR_CODE;
             }
-
             public String getCharacters() {
                 return "!@#$%&*()_+";
             }
